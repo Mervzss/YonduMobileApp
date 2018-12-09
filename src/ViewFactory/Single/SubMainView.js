@@ -57,15 +57,18 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     itemContainer:{
-        justifyContent:'flex-start',
+        justifyContent:'center',
         alignItems:'flex-start',
-        width:'90%',
+        // width:'80%',
+        paddingVertical:15,
+        elevation:20,
         borderLeftColor:'#66CC99',
-        borderLeftWidth:5,
+        borderLeftWidth: Dimensions.get('window').width *.015,
+        backgroundColor:'white',
         margin:15,
         paddingLeft:5,
         // paddingVertical:20,
-        elevation:1
+        
         
     },
     withIcon:{
@@ -80,6 +83,7 @@ const styles = StyleSheet.create({
         flex:0.1,
         width:'100%',
         alignItems:'center',
+        // backgroundColor:'red'
     },
     buttonStyle:{
         width:'92%',

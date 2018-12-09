@@ -1,0 +1,8 @@
+export { ict } from './ICT'
+export { bpo } from './BPO'
+export { bankingnfinance } from './BankingnFinance'
+export { realestate } from './RealEstate'
+export { government } from './Government'
+export { manufacturing } from './Manufacturing'
+export { construction } from './Contruction'
+export { retail } from './Retail'

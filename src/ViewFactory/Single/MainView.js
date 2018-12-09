@@ -15,7 +15,7 @@ class MainView extends Component {
                     &&
                     mainData.map((val, index) => {
                         return (
-                            <TouchableOpacity key={index} style={styles.itemView} onPress={() => this.props.navigation.navigate('MainDrawer',{data:val.child})}>
+                            <TouchableOpacity key={index} style={styles.itemView} onPress={() => this.props.navigation.navigate(val.headname,{data:val.headname})}>
                                 <Text style={{ fontSize: 24, fontWeight:'bold'}}>{val.headname}</Text>
                             </TouchableOpacity>
                         )

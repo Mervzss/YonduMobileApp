@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-// import {Platform, StyleSheet, Text, View} from 'react-native';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation'
+
+// Views
 import MainHome from './src/ViewFactory/Single/MainView'
 import YonduDrawer from './src/ViewFactory/Drawer/YonduDrawer'
 
@@ -14,7 +15,7 @@ export default class App extends Component{
 const MainSwitch = createSwitchNavigator(
   {
     Home: MainHome,
-    Content: YonduDrawer
+    MainContent: YonduDrawer
   },
   {
     initialRouteName:'Home'
