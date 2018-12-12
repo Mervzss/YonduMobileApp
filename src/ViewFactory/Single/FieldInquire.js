@@ -11,7 +11,7 @@ class FieldInquireView extends Component {
         return {
             headerTitle: navigation.getParam('title', "Inquire"),
             headerLeft: <Icon style={styles.iconWrap} name='md-arrow-round-back' size={30}
-                        onPress={() => navigation.goBack()}/>
+                        onPress={() => navigation.goBack()} color={'white'}/>
         }
     }
 
@@ -48,7 +48,7 @@ class FieldInquireView extends Component {
                         }
                     }
                     onSubmit={(values, s) => {
-                        this.props.navigation.navigate('RThank')
+                        this.props.navigation.navigate('Thank')
                         // Alert.alert("Success Message", "Quote Success", null, { cancelable: false })
                         Keyboard.dismiss();
                     }}>

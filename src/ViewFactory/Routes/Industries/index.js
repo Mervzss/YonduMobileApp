@@ -19,11 +19,17 @@ const Stack = createStackNavigator(
         headerMode:'screen',
         defaultNavigationOptions:({navigation}) => {
             return{
-            headerLeft:(<Icon style={styles.iconWrap} name='md-menu' size={30} onPress={() => navigation.toggleDrawer()}/>) ,
+            headerLeft:(<Icon style={styles.iconWrap} name='md-menu' size={30} onPress={() => navigation.toggleDrawer()} color={'white'}/>) ,
             headerRight:<View/>,
             headerTitle: 'Industries',
             headerTitleContainerStyle:{
                 justifyContent:'center'
+            },
+            headerStyle:{
+                backgroundColor:'#66CC99'
+            },
+            headerTitleStyle:{
+                color:'white'
             }
             }
         }

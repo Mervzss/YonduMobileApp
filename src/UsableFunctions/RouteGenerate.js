@@ -1,4 +1,4 @@
-export const routeGenerate = (RouteName, View) => {
+export const routeGenerate = (RouteName, View, add) => {
     let mytest = null
     let i = 0
     do {
@@ -8,6 +8,15 @@ export const routeGenerate = (RouteName, View) => {
         }
         i++
     } while (i < View.length)
+
+    if(add){
+        mytest = {
+            ...mytest,
+            ...add
+        }
+    }
+    
     
     return mytest
+    
 }

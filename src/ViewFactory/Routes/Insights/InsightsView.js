@@ -6,7 +6,7 @@ class InsightsView extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity style={styles.mainContainer}>
+                <TouchableOpacity style={styles.mainContainer} onPress={() => this.props.navigation.navigate('RSelected')}>
                     <View style={styles.leftText}>
                         <Text style={{ fontSize: 20, color: 'black' }}>Lorem ipsum dolor sit amet</Text>
                         <Text style={{ paddingBottom: 10, fontSize: 14 }} numberOfLines={2}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</Text>

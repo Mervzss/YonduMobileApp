@@ -7,10 +7,10 @@ import {responsiveHeight,responsiveWidth} from '../../../UsableFunctions/Respons
 
 class WhatWeDoView extends Component {
     render() {
-        // let data = this.props.navigation.getParam('data', null)
+        //  let data = this.props.navigation.getParam('data', null)
         return (
             <View style={styles.container}>
-            <View style={styles.upperView}> 
+            <View style={styles.upperView}>
             <ScrollView  contentContainerStyle={styles.scrollContainer}>
 
                 {

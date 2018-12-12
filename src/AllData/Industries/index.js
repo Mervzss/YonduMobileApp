@@ -3,6 +3,7 @@ import {ict,bpo,bankingnfinance,realestate,government,manufacturing,construction
 export const industries = {
     headname: 'Industries',
     type: TYPE_LIST,
+    image: require('YonduMobileApp/src/assets/default_page/industries.jpg'),
     child:
     [
         ict,

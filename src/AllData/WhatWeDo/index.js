@@ -9,6 +9,7 @@ import { trainingDev } from './Content/TrainingDev'
 export const whatWeDo = {
     headname: 'What We do',
     type: TYPE_LIST,
+    image: require('YonduMobileApp/src/assets/default_page/what_we_do.jpg'),
     child:
         [
             softwareDev,

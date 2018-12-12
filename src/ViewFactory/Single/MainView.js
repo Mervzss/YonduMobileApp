@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Button, TouchableOpacity, ImageBackground } from 'react-native'
 import { mainData } from '../../AllData'
 
 
@@ -16,7 +16,9 @@ class MainView extends Component {
                     mainData.map((val, index) => {
                         return (
                             <TouchableOpacity key={index} style={styles.itemView} onPress={() => this.props.navigation.navigate(val.headname,{data:val.headname})}>
-                                <Text style={{ fontSize: 24, fontWeight:'bold'}}>{val.headname}</Text>
+                                <ImageBackground source={val.image} style={styles.imageBG}>
+                                <Text style={{ fontSize: 24, fontWeight:'bold', color:'white'}}>{val.headname}</Text>
+                                </ImageBackground>
                             </TouchableOpacity>
                         )
                     })
@@ -38,6 +40,11 @@ const styles = StyleSheet.create({
     itemView: {
         flex: 1,
         width: "100%",
+
+    },
+    imageBG:{
+        width:'100%', 
+        flex:1,
         justifyContent: 'center',
         alignItems: 'center'
     }

@@ -5,4 +5,4 @@ import Careers from './Careers'
 import AboutYondu from './AboutYondu'
 import ContactUs from './ContactUs'
 
-export const RouteArray = [ WhatWeDo, Industries, Insights, Careers, AboutYondu, ContactUs]
+export const RouteArray = [ WhatWeDo, Industries, Insights, AboutYondu, ContactUs]
