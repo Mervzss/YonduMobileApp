@@ -4,6 +4,10 @@ import { YonduHeader, YonduTextBold, YonduText, YonduButton, YonduInput } from '
 import { Formik } from 'formik'
 import { responsiveHeight, responsiveWidth } from '../../UsableFunctions'
 import * as Yup from 'yup'
+import axios from 'axios'
+import Axios from 'axios';
+// const axios = require('axios');
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 class SubWithEmail extends Component {
 
@@ -37,9 +41,16 @@ class SubWithEmail extends Component {
                         }
                     }
                     onSubmit={(values, s) => {
-                        this.props.navigation.navigate('Thank')
+
+                        Axios({method: 'post',url: 'http://192.168.190.44:3000/news_letter',data: values})
+                        .then(res => console.log(res))
+                        .then(val => {
+                            console.log(val)
+                            this.props.navigation.navigate('Thank')
+                        })
+                        .catch(err => console.log("SAD LIFE",err))
                         // Alert.alert("Success Message", "Quote Success", null, { cancelable: false })
-                        Keyboard.dismiss();
+   
                     }}>
 
                     {({ handleChange, handleSubmit, values, errors, handleBlur }) => {
@@ -55,10 +66,7 @@ class SubWithEmail extends Component {
                                         label="Email"
                                         placeholder="Email"
                                         message={errors.email}
-                                    />
-
-
-                            
+                                    />                        
 
                                 </View>
 

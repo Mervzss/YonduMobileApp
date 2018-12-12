@@ -5,6 +5,9 @@ import { YonduInput, YonduPicker, YonduButton, YonduMessageBox } from '../../com
 import Icon from 'react-native-vector-icons/Ionicons'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
+import Axios from 'axios'
+// const axios = require('axios');
+// axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 class FieldInquireView extends Component {
     static navigationOptions = ({ navigation }) => {
@@ -48,9 +51,16 @@ class FieldInquireView extends Component {
                         }
                     }
                     onSubmit={(values, s) => {
-                        this.props.navigation.navigate('Thank')
+                        Axios({method: 'post',url: 'http://192.168.190.44:3000/qoute_list',data: values})
+                        .then(res => console.log(res))
+                        .then(val => {
+                            console.log(val)
+                            this.props.navigation.navigate('Thank')
+                        })
+                        .catch(err => console.log("SAD LIFE",err))
+                        // this.props.navigation.navigate('Thank')
+                        
                         // Alert.alert("Success Message", "Quote Success", null, { cancelable: false })
-                        Keyboard.dismiss();
                     }}>
 
                     {({ handleChange, handleSubmit, values, errors, handleBlur }) => {

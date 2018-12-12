@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, StyleSheet } from 'react-native'
 
 export const YonduText = props =>{
-    return(<Text style={[styles.subText, {textAlign: props.alignText}]}>{props.indent}{props.children}</Text>)
+    return(<Text style={[styles.subText , props.style]}>{props.indent}{props.children}</Text>)
 }
 
 const styles = StyleSheet.create({
