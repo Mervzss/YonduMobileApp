@@ -5,6 +5,7 @@ import { createSwitchNavigator, createAppContainer } from 'react-navigation'
 import MainHome from './src/ViewFactory/Single/MainView'
 import YonduDrawer from './src/ViewFactory/Drawer/YonduDrawer'
 import ThankYouView from './src/ViewFactory/Single/ThankYouView'
+import YonduSplashScreen from './src/ViewFactory/SplashScreen/YonduSplashScreen'
 
 
 export default class App extends Component{
@@ -15,12 +16,13 @@ export default class App extends Component{
 
 const MainSwitch = createSwitchNavigator(
   {
+    Splash: YonduSplashScreen,
     Home: MainHome,
     MainContent: YonduDrawer,
     Thank: ThankYouView
   },
   {
-    initialRouteName:'Home'
+    initialRouteName:'Splash'
   }
 )
 

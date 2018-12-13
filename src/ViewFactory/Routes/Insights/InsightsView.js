@@ -1,22 +1,31 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { responsiveHeight, responsiveWidth } from '../../../UsableFunctions'
+import { insights } from '../../../AllData/Insights'
 
 class InsightsView extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity style={styles.mainContainer} onPress={() => this.props.navigation.navigate('RSelected')}>
-                    <View style={styles.leftText}>
-                        <Text style={{ fontSize: 20, color: 'black' }}>Lorem ipsum dolor sit amet</Text>
-                        <Text style={{ paddingBottom: 10, fontSize: 14 }} numberOfLines={2}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</Text>
-                        <Text style={{ color: '#4ABFFC', fontSize: 16, fontStyle: 'italic' }}>SOLUTIONS - Nov-7-2018</Text>
-                    </View>
-                    <View style={styles.rightImage}>
-                        <Image source={null} style={{ width: 75, height: 75, backgroundColor: 'gray' }} />
-                    </View>
+                
+                {insights.data.map((val, index) => {
+                    return (
+                        <TouchableOpacity style={styles.mainContainer} onPress={() => this.props.navigation.navigate('RSelected',{data:val})} key={index}>
 
-                </TouchableOpacity>
+                            <View style={styles.leftText}>
+                                <Text style={{ fontSize: 20, color: 'black' }}>{val.head}</Text>
+                                <Text style={{ paddingBottom: 10, fontSize: 14 }} numberOfLines={2}>{val.content}</Text>
+                                <Text style={{ color: '#4ABFFC', fontSize: 16, fontStyle: 'italic' }}>{val.type} - {val.date}</Text>
+                            </View>
+
+                            <View style={styles.rightImage}>
+                                <Image source={val.image} style={{ width: 75, height: 75, backgroundColor: 'gray' }} resizeMethod='resize' resizeMode='stretch' />
+                            </View>
+
+                        </TouchableOpacity>
+                    )
+                })}
+
 
             </View>
         )

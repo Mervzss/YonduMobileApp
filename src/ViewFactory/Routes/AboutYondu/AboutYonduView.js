@@ -20,7 +20,7 @@ class AboutYonduView extends Component {
                         </YonduTextBold>
                     </View>
                     <View style={styles.paragraph} >
-                        <YonduText indent={"     "} >
+                        <YonduText indent={"     "} style={{textAlign:'left'}}>
                             Founded in 2001, Yondu has since established itself 
                             as a topnotch IT solutions provider in the Philippines- 
                             connecting the archipelago through creative digital innovation.
@@ -28,7 +28,7 @@ class AboutYonduView extends Component {
                     </View>
 
                     <View style={styles.paragraph} >
-                        <YonduText indent={"     "} >
+                        <YonduText indent={"     "} style={{textAlign:'left'}}>
                         Our experienced IT professionals confidently guide companies through today’s 
                         complex technological landscape.&nbsp;We don’t just put our clients on the map. 
                         Using the power of technology, we help them stay there, too.
@@ -36,7 +36,7 @@ class AboutYonduView extends Component {
                     </View>
 
                     <View style={styles.paragraph} >
-                        <YonduText indent={"     "} >
+                        <YonduText indent={"     "} style={{textAlign:'left'}}>
                         Backed by top tech company Xurpas and telco giant, Globe Telecom, Inc., 
                         Yondu has all the tools to transform your big ideas into reality with the 
                         most efficient strategies. May it be web, mobile, software development or systems 
@@ -45,13 +45,15 @@ class AboutYonduView extends Component {
                     </View>
 
                     <View style={styles.paragraph} >
-                        <YonduText indent={"     "} >
+                        <YonduText indent={"     "} style={{textAlign:'left'}}>
                         Yondu’s extensive portfolio shows our seamless collaboration with business 
                         partners from the fields of technology, retail, and real estate. It also 
                         shows how we care for our partners, and our hunger to deliver service that is 
                         cut above the rest.
                         </YonduText>
                     </View>
+
+                    {/* <Text style={{fontSize:14, fontWeight:'bold', flexWrap:'wrap', backgroundColor:'green', alignSelf:'stretch', alignItems:'stretch'}}> SAD LIFE TALGA ANG BOHAY</Text> */}
                     
 
                     <View style={styles.lowImage}>

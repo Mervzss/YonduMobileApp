@@ -5,12 +5,13 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 export const YonduHeader = props =>{
     return(
-        <View style={[styles.customHeader, props.color]}>
+        <View style={[styles.customHeader, props.style]}>
 
                     { props.leftIcon ?
                     <View style={styles.headerLeft}>
                     <Icon name={props.leftIcon} size={30} color='white' onPress={props.pressLeft}/>
-                    </View>: <View style={styles.headerLeft}/>}
+                    </View>: <View style={styles.headerLeft}/>
+                    }
 
                     <View style={styles.headerTitle}>
                         <Text style={{color:'white', fontSize:18, fontWeight:'bold'}}>{props.title}</Text>
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     headerTitle:{
-        flex:0.9,
+        flex:0.7,
         alignItems:'center'
     },
     headerLeft:{
