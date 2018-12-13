@@ -26,7 +26,11 @@ class YonduSplashScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Image source={YonduTitle} resizeMode='contain' resizeMethod='resize' style={{width:'100%', height:40}}/>
+                <Image 
+                source={YonduTitle} 
+                resizeMode='contain' 
+                resizeMethod='resize' 
+                style={styles.imageTitle}/>
             </View>
         )
     }
@@ -41,4 +45,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#66CC99',
     },
+    imageTitle:{
+        width:'100%',
+         height:40
+        }
 });

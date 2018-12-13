@@ -52,8 +52,6 @@ class AboutYonduView extends Component {
                         cut above the rest.
                         </YonduText>
                     </View>
-
-                    {/* <Text style={{fontSize:14, fontWeight:'bold', flexWrap:'wrap', backgroundColor:'green', alignSelf:'stretch', alignItems:'stretch'}}> SAD LIFE TALGA ANG BOHAY</Text> */}
                     
 
                     <View style={styles.lowImage}>

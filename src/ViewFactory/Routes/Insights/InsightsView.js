@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import { responsiveHeight, responsiveWidth } from '../../../UsableFunctions'
 import { insights } from '../../../AllData/Insights'
 
 class InsightsView extends Component {
@@ -8,7 +7,8 @@ class InsightsView extends Component {
         return (
             <View style={styles.container}>
                 
-                {insights.data.map((val, index) => {
+                {
+                    insights.data.map((val, index) => {
                     return (
                         <TouchableOpacity style={styles.mainContainer} onPress={() => this.props.navigation.navigate('RSelected',{data:val})} key={index}>
 

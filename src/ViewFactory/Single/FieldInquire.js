@@ -6,8 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import Axios from 'axios'
-// const axios = require('axios');
-// axios.defaults.headers.post['Content-Type'] = 'application/json';
+
 
 class FieldInquireView extends Component {
     static navigationOptions = ({ navigation }) => {

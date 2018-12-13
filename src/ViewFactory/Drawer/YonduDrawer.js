@@ -6,7 +6,7 @@ import YonduImage from '../../assets/drawer/yondu_small.png'
 
 import { RouteArray } from '../Routes'
 import { mainData } from '../../AllData'
-import {routeGenerate} from '../../UsableFunctions/RouteGenerate'
+import { routeGenerate } from '../../UsableFunctions/RouteGenerate'
 import SubWithEmailView from '../Single/SubWithEmail'
 
 class Drawer extends React.Component {
@@ -18,6 +18,7 @@ class Drawer extends React.Component {
     updateSelect = (val) => {
         this.props.navigation.closeDrawer()
         this.props.navigation.navigate(val.headname || val, { data: val.child })
+
         this.setState({
             selectedItem: val.headname || val
         })
@@ -26,33 +27,49 @@ class Drawer extends React.Component {
     render() {
         let { selectedItem } = this.state
         return (
-            <View style={styles.container}>
-            <View>
 
-                <ImageBackground source={YonduBG} style={styles.imageBG} resizeMethod='resize'>
-                <View style={styles.inView}>
-                <Image source={YonduImage} style={styles.imageText} resizeMethod='resize' resizeMode='contain'/>
-                </View>
-                </ImageBackground>
+            <View style={styles.container}>
+
                 <View>
-                    {mainData.map((val, index) => {
-                        return (
-                            <TouchableOpacity 
-                            key={index} 
-                            style={styles.itemView} 
-                            onPress={this.updateSelect.bind(this, val)}>
-                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: selectedItem === val.headname ? '#66CC99' : 'gray' }}>{val.headname}</Text>
-                            </TouchableOpacity>
-                        )
-                    })}
+
+                    {/* UPPER IMAGE */}
+                    <ImageBackground source={YonduBG} style={styles.imageBG} resizeMethod='resize'>
+
+                        <View style={styles.inView}>
+                            <Image source={YonduImage} style={styles.imageText} resizeMethod='resize' resizeMode='contain' />
+                        </View>
+
+                    </ImageBackground>
+
+                    {/* DRAWER ITEMS */}
+                    <View>
+                        {mainData.map((val, index) => {
+                            return (
+                                <TouchableOpacity
+                                    key={index}
+                                    style={styles.itemView}
+                                    onPress={this.updateSelect.bind(this, val)}>
+
+                                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: selectedItem === val.headname ? '#66CC99' : 'gray' }}>
+                                        {val.headname}
+                                    </Text>
+
+                                </TouchableOpacity>
+                            )
+                        })}
+                    </View>
+
                 </View>
-            </View>
-                <TouchableOpacity 
-                style={styles.itemView} 
-                onPress={this.updateSelect.bind(this, 'RSub')}>
+
+                {/* LOWER ITEMS */}
+                <TouchableOpacity
+                    style={styles.itemView}
+                    onPress={this.updateSelect.bind(this, 'RSub')}>
+
                     <Text style={{ fontSize: 20, fontWeight: 'bold', color: selectedItem === 'Subscribe with Email' ? '#66CC99' : 'gray' }}>
-                    Subscribe with Email
+                        Subscribe with Email
                     </Text>
+
                 </TouchableOpacity>
 
             </View>
@@ -63,7 +80,7 @@ class Drawer extends React.Component {
 
 
 const YonduDrawer = createDrawerNavigator(
-    routeGenerate(mainData, RouteArray, {'RSub': SubWithEmailView}),
+    routeGenerate(mainData, RouteArray, { 'RSub': SubWithEmailView }),
     {
         // initialRouteName: 'MainDrawer',
         contentComponent: props => <Drawer {...props} />
@@ -76,7 +93,7 @@ export default DrawerContent = createAppContainer(YonduDrawer)
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:'white', 
+        backgroundColor: 'white',
         justifyContent: 'space-between'
     },
     itemView: {
@@ -86,23 +103,23 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         paddingLeft: Dimensions.get('window').height * .03
     },
-    imageBG:{
-        width:'100%', 
-        height:140,
-        backgroundColor:'rgba(0, 0, 0, 0.7)',
-        justifyContent:'center', 
-        alignItems:'center',
-        
+    imageBG: {
+        width: '100%',
+        height: 140,
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        justifyContent: 'center',
+        alignItems: 'center',
+
     },
-    imageText:{
-        width:'70%',
-         height:35
+    imageText: {
+        width: '70%',
+        height: 35
     },
-    inView:{
-        justifyContent:'center', 
-        alignItems:'center',
-        width:'100%',
-        flex:1,
+    inView: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        flex: 1,
         backgroundColor: 'rgba(255, 255, 255, 0.2)'
     }
 });

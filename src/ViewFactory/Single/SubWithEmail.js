@@ -6,7 +6,6 @@ import { responsiveHeight, responsiveWidth } from '../../UsableFunctions'
 import * as Yup from 'yup'
 import axios from 'axios'
 import Axios from 'axios';
-// const axios = require('axios');
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 class SubWithEmail extends Component {
@@ -22,8 +21,8 @@ class SubWithEmail extends Component {
 
                 <View style={styles.descriptionHeader}>
 
-                    <YonduTextBold >NEWS LETTER</YonduTextBold>
-
+                        <YonduTextBold >NEWS LETTER</YonduTextBold>
+                        
                     <View style={styles.subTextStyle}>
                         <YonduText>Get the latest tech news, careers and more</YonduText>
                     </View>
@@ -40,7 +39,7 @@ class SubWithEmail extends Component {
                             email: '',
                         }
                     }
-                    onSubmit={(values, s) => {
+                    onSubmit={(values) => {
 
                         Axios({method: 'post',url: 'http://192.168.190.44:3000/news_letter',data: values})
                         .then(res => console.log(res))
@@ -49,7 +48,6 @@ class SubWithEmail extends Component {
                             this.props.navigation.navigate('Thank')
                         })
                         .catch(err => console.log("SAD LIFE",err))
-                        // Alert.alert("Success Message", "Quote Success", null, { cancelable: false })
    
                     }}>
 
@@ -72,11 +70,9 @@ class SubWithEmail extends Component {
 
                                 <View style={styles.lowerButton}>
                                     <YonduButton color={'#66CC99'} title='Submit' buttonPress={() => { handleSubmit() }} />
-
                                 </View>
 
                             </View>
-                        
                         
                         )
                     }}

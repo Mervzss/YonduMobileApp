@@ -6,7 +6,6 @@ import { mainData } from '../../AllData'
 class MainView extends Component {
 
     render() {
-        // let head = this.props.navigation.getParam('header', null)
         return (
             <View style={styles.container}>
 
@@ -23,7 +22,6 @@ class MainView extends Component {
                         )
                     })
                 }
-                {/* <Button onPress={() => this.props.navigation.navigate('Content')} title='GOGOGO' /> */}
             </View>
         )
     }

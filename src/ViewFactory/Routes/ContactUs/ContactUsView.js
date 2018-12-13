@@ -12,14 +12,14 @@ class ContactUsView extends Component {
     this.state = {};
   }
 
-  state = {
-    YonduLocation: {
+  state = 
+  {
+    YonduLocation: 
+    {
       latitude: 14.555717,
       longitude: 121.0476,
       latitudeDelta: 0.0122,
-      longitudeDelta:
-        (Dimensions.get("window").width / Dimensions.get("window").height) *
-        0.0522
+      longitudeDelta:(Dimensions.get("window").width / Dimensions.get("window").height) * 0.0522
     }
   };
 
@@ -68,9 +68,11 @@ class ContactUsView extends Component {
           </MapView>
 
           <TouchableOpacity
-            style={{ position: "absolute", top: 20, left: 20 }}
+            style={styles.toggleDrawer}
             onPress={() => this.props.navigation.toggleDrawer()}>
+
             <Icon name='md-menu' size={30} color='gray'/>
+
           </TouchableOpacity>
 
         </View>
@@ -122,6 +124,14 @@ const styles = StyleSheet.create({
   },
   textContent: {
 
+  },
+  toggleDrawer:{ 
+    position: "absolute", 
+    top: 20, 
+    left: 20 
+  },
+  locateStyle:{
+    
   }
 })
 

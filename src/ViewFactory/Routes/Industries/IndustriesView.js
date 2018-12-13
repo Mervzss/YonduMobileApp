@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet} from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { YonduText, YonduTextBold, YonduTextOnImage } from '../../../components/YonduComp'
 import { industries } from '../../../AllData/Industries'
 
@@ -15,17 +15,20 @@ class IndustriesView extends Component {
                     <View style={styles.subTextStyle}>
                         <YonduText>consectetur adipiscing elit, sed do eiusmod tempor incididunta</YonduText>
                     </View>
+
                 </View>
 
                 <View style={styles.imageHolder}>
 
-                    {industries.child.map((val, index) => {
-                        return (
-                            <View style={styles.inImage} key={index}>
-                                <YonduTextOnImage imageSource={val.image} name={val.headname} />
-                            </View>
-                        )
-                    })}
+                    {
+                        industries.child.map((val, index) => {
+                            return (
+                                <View style={styles.inImage} key={index}>
+                                    <YonduTextOnImage imageSource={val.image} name={val.headname} />
+                                </View>
+                            )
+                        })
+                    }
                 </View>
 
             </View>

@@ -23,7 +23,7 @@ class ThankYouView extends Component {
                 </View>
 
                 <View style={styles.buttonWrapper}>
-                    <YonduButton title='Inquire Again' color={'#66CC99'} buttonPress={() => this.props.navigation.navigate('RWhatWeDo')}/>
+                    {/* <YonduButton title='Inquire Again' color={'#66CC99'} buttonPress={() => this.props.navigation.navigate('RWhatWeDo')}/> */}
                     <YonduButton title='Back to Home' color={'#66CC99'} buttonPress={() => this.props.navigation.navigate('Home')}/>
                 </View>
             </View>
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     },
     buttonWrapper: {
         flex: 0.15,
-        width: '100%'
+        width: '100%',
+        justifyContent:'flex-end'
     },
     thankView: {
         flex: 0.85,
