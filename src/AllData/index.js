@@ -5,4 +5,4 @@ import {industries} from './Industries'
 import {insights} from './Insights'
 import {whatWeDo} from './WhatWeDo'
 
-export const mainData = [whatWeDo, industries, insights, aboutYondu, contactUs]
+export const mainData = [whatWeDo, industries, insights, careers, aboutYondu, contactUs]

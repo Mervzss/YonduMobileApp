@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 import ThanksImage from '../../assets/some/clive-thank-you.png'
 import { YonduButton, YonduText, YonduTextBold } from '../../components/YonduComp'
 import { responsiveHeight, responsiveWidth } from '../../UsableFunctions'
 class ThankYouView extends Component {
+
     static navigationOptions = {
         header: null
     }
+    
     render() {
         return (
             <View style={styles.container}>
